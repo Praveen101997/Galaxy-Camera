@@ -1,0 +1,124 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="About">
+
+        <PreferenceScreen
+            android:icon="@drawable/ic_camera_icon_launcher"
+            android:key="Developer"
+            android:title="Developed By : Praveen Kumar Sharma"
+            android:summary="Email ID : dce.pks@gmail.com">
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:icon="@drawable/ic_share_black_24dp"
+            android:key="shareapp"
+            android:title="Share App"
+            android:summary="Email ID : dce.pks@gmail.com">
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Setting">
+
+        <ListPreference
+            app:defaultValue="4:3"
+            app:entries="@array/cameraFrame_entry"
+            app:entryValues="@array/cameraFrame_value"
+            app:key="pref_front_camera_frame"
+            app:title="Front Camera Frame"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="16:9"
+            app:entries="@array/cameraFrame_entry"
+            app:entryValues="@array/cameraFrame_value"
+            app:key="pref_back_camera_frame"
+            app:title="Back Camera Frame"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:entries="@array/resolution_entry"
+            app:entryValues="@array/resolution_value"
+            app:key="pref_front_pic_quality"
+            app:title="Front Camera Picture Resolution"
+            app:useSimpleSummaryProvider="true" />
+
+
+
+        <ListPreference
+            app:entries="@array/resolution_entry"
+            app:entryValues="@array/resolution_value"
+            app:key="pref_back_pic_quality"
+            app:title="Back Camera Picture Resolution"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:entries="@array/resolution_entry"
+            app:entryValues="@array/resolution_value"
+            app:key="pref_front_video_quality"
+            app:title="Front Camera Video Resolution"
+            app:useSimpleSummaryProvider="true" />
+
+
+        <ListPreference
+
+            app:entries="@array/resolution_entry"
+            app:entryValues="@array/resolution_value"
+            app:key="pref_back_video_quality"
+            app:title="Back Camera Video Resolution"
+            app:useSimpleSummaryProvider="true" />
+
+
+        <SwitchPreferenceCompat
+            app:key="locationsave"
+            app:summaryOff="Location Set to DCIM/GalaxyCamera"
+            app:summaryOn="Location Set to DCIM/Camera"
+            app:title="Change Saving Location" />
+
+        <SwitchPreferenceCompat
+            app:key="gridView"
+            app:summaryOff="Off"
+            app:summaryOn="On"
+            app:title="Show gridlines"
+            app:isPreferenceVisible="false"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="timestamp"
+            app:summaryOff="Off"
+            app:summaryOn="On"
+            app:title="Add Timestamp to Photo" />
+
+        <SwitchPreferenceCompat
+            app:key="zoomEnabling"
+            app:summaryOff="Disabled"
+            app:summaryOn="Enabled"
+            app:title="Camera Zooming" />
+
+        <SwitchPreferenceCompat
+            android:dependency="zoomEnabling"
+            app:key="actionVolume"
+            app:summaryOff="Capture"
+            app:summaryOn="Zooming"
+            app:title="Volume Button Action" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
